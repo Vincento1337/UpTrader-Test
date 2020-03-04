@@ -1,0 +1,225 @@
+/*general styles*/
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/PFDinTextPro-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/PFDinTextPro-Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/PFDinTextPro-Medium.ttf') format('ttf');
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 400px;
+	margin: 0 auto;
+	font-family: "PFDinTextPro", sans-serif;
+	font-weight: 300;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+}
+
+/*choice-preview styles*/
+.choice-preview {
+	min-height: 100vh;
+	background: #E8EBF4 url(../img/main-bg.jpg) no-repeat center top / cover;
+}
+
+.choice-preview .container {
+	padding-top: 72px;
+}
+
+.choice-preview__title {
+	margin-top: 0;
+	margin-bottom: 23px;
+	font-size: 36px;
+	color: #171717;
+	text-align: center;
+}
+
+.choice-preview__menu {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.choice-preview__item {
+	margin-bottom: 13px;
+}
+
+.choice-preview__link {
+	position: relative;
+	display: block;
+	padding: 20px 0;
+	padding-left: 75px;
+	width: 340px;
+	text-decoration: none;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.choice-preview__link:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+	transition: all 0.3s ease-in-out;
+}
+
+.choice-preview__link::before {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	content:'';
+	width: 36px;
+	height: 36px;
+}
+
+.choice-preview__arrow {
+	position: absolute;
+	top: 38%;
+	right: 15px;
+	width: 10px;
+	height: 10px;
+	border-right: 1px solid #888680;
+	border-bottom: 1px solid #888680;
+	background-color: transparent;
+	transform: rotate(45deg);
+	transition: all 0.3s ease-in-out;
+}
+
+.choice-preview__arrow_active {
+	transform: rotate(225deg);
+	transition: all 0.3s ease-in-out;
+}
+
+.choice-preview__item:first-child .choice-preview__link::before {
+	position: absolute;
+	background: url("../img/icon-1.png") no-repeat center center;
+}
+
+.choice-preview__item:nth-child(3) .choice-preview__link::before {
+	position: absolute;
+	background: url("../img/icon-mobile-2.png") no-repeat center center;
+}
+
+.choice-preview__item:nth-child(5) .choice-preview__link::before {
+	position: absolute;
+	background: url("../img/icon-mobile-3.png") no-repeat center center;
+}
+
+.choice-preview__item-title {
+	margin: 0;
+	color: #242424;
+	font-size: 19px;
+	font-weight: inherit;
+}
+
+/*tabs styles*/
+.tab-item {
+	display: none;
+	margin: 17px 0;
+	width: 320px;
+}
+
+.tab-item_active {
+	display: block;
+}
+
+.tab-item__menu {
+	position: relative;
+	z-index: 50;	
+	margin-bottom: 30px;
+	counter-reset: li;
+}
+
+.tab-item__menu::after {
+	position: absolute;
+	display: block;
+	bottom: -380px;
+	left: -39px;
+	content: "";
+	width: 400px;
+	height: 400px;
+	background: url("../img/choice-bg.jpg") no-repeat right center / cover;
+	z-index: -5;
+}
+
+.tab-item__menu-item {
+	position: relative;
+	margin-bottom: 20px;
+	position: relative;
+	font-size: 16px;
+	color: #1D1D1D;
+}
+
+.tab-item__menu-item::before {
+	position: absolute;
+	content: counter(li);
+	counter-increment: li;
+	top: -7px;
+	left: -30px;
+	font-size: 32px;
+	font-weight: 300;
+	color: #00B596;
+}
+
+.tab-item__text {
+	margin-top: 0;
+	margin-bottom: 35px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #1C1C1C;
+}
+
+.tab-item__title {
+	margin-bottom: 29px;
+	font-size: 24px;
+	font-weight: 500;
+	color: #171717;
+}
+
+.tab-item__link {
+	position: relative;
+	display: block;
+	margin-bottom: 307px;
+	padding: 10px 0;
+	width: 156px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #009E82;
+	text-align: center;
+	z-index: 100;
+}
+

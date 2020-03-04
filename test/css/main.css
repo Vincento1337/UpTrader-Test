@@ -1,0 +1,254 @@
+/*general styles*/
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/PFDinTextPro-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/PFDinTextPro-Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'PFDinTextPro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/PFDinTextPro-Medium.ttf') format('ttf');
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: "PFDinTextPro", sans-serif;
+	font-weight: 300;
+}
+
+*,
+*::before,
+*a::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+/*choice-preview styles*/
+.choice-preview {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	background: #E8EBF4 url(../img/main-bg.jpg) no-repeat center top / cover;
+
+}
+
+.choice-preview__title {
+	margin-top: 0;
+	margin-bottom: 75px;
+	font-size: 48px;
+	color: #171717;
+	text-align: center;
+}
+
+.choice-preview__menu {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.choice-preview__item {
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: flex-end;
+	align-items: flex-end;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 364px;
+	height: 364px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.choice-preview__item::after {
+	position: absolute;
+	display: none;
+	top: 8px;
+	content: '';
+	width: 348px;
+	height: 348px;
+	border: 1px solid #00B0A2;
+	border-radius: 50%;
+}
+
+.choice-preview__item:hover::after {
+	display: block;
+}
+
+.choice-preview__item:first-child .choice-preview__pic {
+	width: 70%;
+}
+
+.choice-preview__link {
+	text-decoration: none;
+}
+
+.choice-preview__pic {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 33px;
+}
+
+.choice-preview__item-title {
+	margin-bottom: 125px;
+	color: #242424;
+	font-size: 28px;
+	font-weight: inherit;
+}
+
+/*choice styles*/
+.choice {
+	min-height: 100vh;
+	background: url(../img/choice-bg.jpg) no-repeat center top / cover;
+}
+
+.choice-header {
+	padding: 39px 0;
+	border-bottom: 1px solid #707070;
+}
+
+.choice-header__menu {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.choice-header__link {
+	position: relative;
+	display: block;
+	width: 342px;
+	font-size: 28px;
+	color: #2E2E2E;
+	text-decoration: none;
+	text-align: center;
+	border-bottom: none;
+}
+
+.choice-header__link::after {
+	position: absolute;
+	display: none;
+	top: 68px;
+	left: 0px;
+	content: '';
+	width: 342px;
+	height: 3px;
+	background-color: #00978A;
+	color: #009E82;
+}
+
+.choice-header__link:hover::after {
+	display: block;
+}
+
+.choice-header__link_active::before {
+	position: absolute;
+	top: 68px;
+	left: 0px;
+	content: '';
+	width: 342px;
+	height: 3px;
+	background-color: #00978A;
+	color: #009E82;
+}
+
+/*tabs styles*/
+.tab-item {
+	display: none;
+	margin-top: 81px;
+	width: 60%;
+}
+
+.tab-item_active {
+	display: block;
+}
+
+.tab-item__menu {
+	margin-bottom: 30px;
+	counter-reset: li;
+}
+
+.tab-item__menu-item {
+	position: relative;
+	margin-bottom: 22px;
+	position: relative;
+	font-size: 18px;
+	color: #1D1D1D;
+}
+
+.tab-item__menu-item::before {
+	position: absolute;
+	content: counter(li);
+	counter-increment: li;
+	top: -7px;
+	left: -30px;
+	font-size: 32px;
+	font-weight: 300;
+	color: #00B596;
+}
+
+.tab-item__text {
+	margin-top: 0;
+	margin-bottom: 35px;
+	font-size: 18px;
+	line-height: 24px;
+	color: #1C1C1C;
+}
+
+.tab-item__title {
+	margin-bottom: 29px;
+	font-size: 24px;
+	font-weight: 500;
+	color: #171717;
+}
+
+.tab-item__link {
+	display: block;
+	padding: 10px 0;
+	width: 156px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #009E82;
+	text-align: center;
+}
